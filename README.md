@@ -266,43 +266,48 @@ This end-to-end procedure requires **zero manual intervention** once launched. I
 
 #### 2.1 General Learning Curve Concept
 
-A learning curve tracks a **performance metric** $$\(\mathcal{M}\)$$ (e.g., MSE, MAE, R²) as a function of the training set size $$\(m\)$$. Formally, we denote:
+<div style="background-color:black; padding:10px; color:white;">
+<p>A learning curve tracks a <strong>performance metric</strong> $\mathcal{M}$ (e.g., MSE, MAE, R²) as a function of the training set size $m$. Formally, we denote:</p>
 
-$$\[
+$$
 \mathcal{M}_{\text{train}}(m), \quad \mathcal{M}_{\text{valid}}(m),
-\]$$
+$$
 
-where:
-- $$\(\mathcal{M}_{\text{train}}(m)\)$$ is the metric computed on a training subset of size $$\(m\)$$.  
-- $$\(\mathcal{M}_{\text{valid}}(m)\)$$ is the metric computed on the validation set after training on the same $$\(m\)$$ samples.
+<p>where:</p>
+<ul>
+  <li>$\mathcal{M}_{\text{train}}(m)$ is the metric computed on a training subset of size $m$.</li>
+  <li>$\mathcal{M}_{\text{valid}}(m)$ is the metric computed on the validation set after training on the same $m$ samples.</li>
+</ul>
 
-Because we randomly sample subsets multiple times (say $$\(S\$$) times) to reduce statistical fluctuations, we get repeated measurements:
+<p>Because we randomly sample subsets multiple times (say $S$ times) to reduce statistical fluctuations, we get repeated measurements:</p>
 
-$$\[
+$$
 \mathcal{M}_{\text{train}, s}(m), \quad \mathcal{M}_{\text{valid}, s}(m) \quad \text{for} \; s = 1, 2, \ldots, S.
-\]$$
+$$
 
-We then compute the **average** metric:
+<p>We then compute the <strong>average</strong> metric:</p>
 
-$$\[
+$$
 \overline{\mathcal{M}}_{\text{train}}(m)
 = \frac{1}{S} \sum_{s=1}^S \mathcal{M}_{\text{train}, s}(m),
 \quad
 \overline{\mathcal{M}}_{\text{valid}}(m)
 = \frac{1}{S} \sum_{s=1}^S \mathcal{M}_{\text{valid}, s}(m).
-\]$$
+$$
 
-And the **standard deviation**:
+<p>And the <strong>standard deviation</strong>:</p>
 
-$$\[
+$$
 \sigma_{\text{train}}(m)
 = \sqrt{\frac{1}{S} \sum_{s=1}^S \Bigl(\mathcal{M}_{\text{train}, s}(m) - \overline{\mathcal{M}}_{\text{train}}(m)\Bigr)^2},
-\]\[
+$$
+$$
 \sigma_{\text{valid}}(m)
 = \sqrt{\frac{1}{S} \sum_{s=1}^S \Bigl(\mathcal{M}_{\text{valid}, s}(m) - \overline{\mathcal{M}}_{\text{valid}}(m)\Bigr)^2}.
-\]$$
+$$
 
-We plot $$\(\overline{\mathcal{M}}_{\text{train}}(m)\)$$ and $$\(\overline{\mathcal{M}}_{\text{valid}}(m)\)$$ against $$\(m\)$$, often along with the $$\(\pm \sigma\)$$ “shaded region” to show variability.
+<p>We plot $\overline{\mathcal{M}}_{\text{train}}(m)$ and $\overline{\mathcal{M}}_{\text{valid}}(m)$ against $m$, often along with the $\pm \sigma$ “shaded region” to show variability.</p>
+</div>
 
 ---
 
