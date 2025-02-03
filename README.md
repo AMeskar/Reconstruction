@@ -124,7 +124,11 @@ $$
 </p>
 </div>
 
-   where <div style="background-color:black; padding:10px;"> <p style="color:white;"> $\bar{y}_\text{Left}$ </p> </div> and $$\[\bar{y}_\text{Right}\]$$ are the mean values of the left and right child nodes, respectively.
+   where <div style="background-color:black; padding:10px;">
+<p style="color:white;">
+$\bar{y}_\text{Left}$
+</p>
+</div> and $$\[\bar{y}_\text{Right}\]$$ are the mean values of the left and right child nodes, respectively.
 
 4. **Ensemble Methods** (e.g., Gradient Boosting)  
    **Gradient Boosting** fits new weak learners to the **residual errors**:
