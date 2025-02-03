@@ -1,6 +1,6 @@
 # **Neutrino Energy Reconstruction Using Machine Learning**
 
-This repository contains all code and documentation related to reconstructing **primary neutrino energy** from Monte Carlo (MC) simulated data using various **machine learning (ML)** models and **deep learning architectures**. The goal is to predict neutrino energy from truth-level physical features and compare different ML approaches.  
+This repository contains all code and documentation related to reconstructing **primary neutrino energy** from Monte Carlo (MC) simulated data using various **machine learning (ML)** models and **deep learning architectures**. The goal is to predict neutrino energy from truth-level features and compare different ML approaches.  
 
 ---
 
@@ -14,27 +14,26 @@ This repository contains all code and documentation related to reconstructing **
    1. [Tree-Based Models (Ensemble Learning)](#tree-based-models-ensemble-learning)  
    2. [Distance-Based Model](#distance-based-model)  
    3. [Deep Learning Models](#deep-learning-models)  
-4. [Deep Dive into the Mathematical Foundations](#deep-dive-into-the-mathematical-foundations)  
-   1. [Universal Foundation of ML Algorithms](#universal-foundation-of-ml-algorithms)  
-   2. [Key Equations in Regression Modeling](#key-equations-in-regression-modeling)  
-   3. [Training Procedures](#training-procedures)  
+4. [Mathematical Foundations](#mathematical-foundations)  
+   1. [Foundation of ML Algorithms](#foundation-of-ml-algorithms)  
+   2. [Regression Equations](#regression-equations)  
+   3. [Training](#training)  
 5. [Model Evaluation Metrics](#model-evaluation-metrics)  
-6. [Key Scripts and Files](#key-scripts-and-files)  
-7. [Methodology Summary](#methodology-summary)  
-8. [Results & Insights](#results--insights)  
-9. [Learning Curve Analysis](#learning-curve-analysis)  
+6. [Methodology](#methodology)  
+7. [Results](#results)  
+8. [Learning Curve Analysis](#learning-curve-analysis)  
    1. [Code Explanation](#code-explanation)  
    2. [Mathematical Details](#mathematical-details)  
    3. [Interpreting the Learning Curves](#interpreting-the-learning-curves)  
-10. [Deep Learning Section](#deep-learning-section)  
-11. [Future Improvements](#future-improvements)   
-12. [Contact Information](#Contact-Information)
+9. [Deep Learning Section](#deep-learning-section)  
+10. [Future Improvements](#future-improvements)   
+11. [Contact Information](#Contact-Information)
 
 ---
 
 ## **1. Project Overview**
 
-This project aims to **reconstruct the primary neutrino energy** from Monte Carlo (MC) simulations. We utilize multiple **machine learning** methods—such as **Random Forest**, **Gradient Boosting**, and **k-Nearest Neighbors**—as well as basic **deep learning** architectures like **Artificial Neural Networks (ANN)** and **Convolutional Neural Networks (CNN)** to explore which approach provides the best energy prediction accuracy.
+This project aims to reconstruct the primary neutrino energy from Monte Carlo (MC) simulations. To do this, we utilize multiple machine learning methods—such as Random Forest, Gradient Boosting, and k-nearest Neighbors as well as basic deep learning architectures like Artificial Neural Networks (ANN) and Convolutional Neural Networks (CNN). We will then explore which approach provides the best energy prediction accuracy.
 
 ---
 
@@ -42,18 +41,24 @@ This project aims to **reconstruct the primary neutrino energy** from Monte Carl
 
 ### **2.1 Data Sources**
 
-- **Truth Data (`All_fields_in_one_file.csv`)**  
+- **Truth Data (`All_fields_in_one_file.csv`) **  
   Contains Monte Carlo **simulation truth values**, including spatial coordinates, directional components, and various event-level parameters.
 
 - **Reconstructed Data (`Primary_Neutrino_Energy.csv`)**  
   Contains the reconstructed (simulated) **primary neutrino energy** values used as the regression target.
 
+- **Data (`Energy_Reconstruction/Data_for_ML.h5`)**  
+  Contains both simulation **reconstructed** and **truth**, h5 format is better for storing large data more efficiently, supports data compression, and enables faster read/write operations.
+
+
 ### **2.2 Preprocessing Steps**
 
-1. **Loading**: Use `pandas` to load both truth data and reconstructed data.  
-2. **Filtering**: Select only **numerical features** relevant to neutrino energy reconstruction.  
-3. **Normalization**: Apply `StandardScaler()` to standardize features, ensuring no single feature dominates.  
-4. **Train-Test Split**: Allocate **80%** of the data for training and **20%** for testing using `train_test_split()`.
+1.**Extraction**: A python script `h5_file.py` an optimized data pipeline from root to h5 file extraction only the truth-level important feature.
+2.**Automotization**: Bash scripting to automatize and handle large files, with a removing option after successful extraction.
+3. **Loading**: Use `pandas` to load both truth data and reconstructed data for **CSV format**, use `h5py` for **h5 format**.   
+4. **Filtering**: Select only **numerical features** relevant to neutrino energy reconstruction for **CSV files**.  
+5. **Normalization**: Apply `StandardScaler()` to standardize features, ensuring no single feature dominates.  
+6. **Train-Test Split**: Allocate **80%** of the data for training and **20%** for testing using `train_test_split()`.
 
 ---
 
@@ -65,7 +70,7 @@ This project aims to **reconstruct the primary neutrino energy** from Monte Carl
 |---------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
 | **Random Forest** (`RandomForestRegressor`)                   | An ensemble of decision trees where each tree votes, reducing variance and improving accuracy.       |
 | **Gradient Boosting** (`GradientBoostingRegressor`)           | Iteratively boosts weak learners (decision trees) to minimize prediction error.                      |
-| **Histogram-Based Gradient Boosting** (`HistGradientBoostingRegressor`) | A faster variant of gradient boosting using optimized histogram binning for continuous features.     |
+| **Histogram-Based Gradient Boosting** (`HistGradientBoostingRegressor`) | A faster variant of gradient boosting using optimized histogram binning for continuous features. (Perfect model in our case due to our data mostly histograms and high energy values)    |
 
 ### **3.2 Distance-Based Model**
 
@@ -78,11 +83,11 @@ This project aims to **reconstruct the primary neutrino energy** from Monte Carl
 | Model                                   | Description                                                                                                            |
 |-----------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 | **Artificial Neural Network (ANN)**     | A feedforward neural network with multiple dense (fully connected) layers.                                            |
-| **Convolutional Neural Network (CNN)**  | Uses 1D convolutions to extract features/patterns from the input variables (treated like sequences or signals).       |
+| **Convolutional Neural Network (CNN)**  | Uses 1D convolutions to extract features/patterns from the input variables (treated like sequences or signals), we were skeptical about including the CNN 1D model but it turns out a good approach for spatial pattern recognition.       |
 
 ---
 
-## **4. Deep Dive into the Mathematical Foundations**
+## **4. Mathematical Foundations**
 
 ### **4.1 Universal Foundation of ML Algorithms**
 
@@ -94,11 +99,11 @@ $$\[
 
 where:  
 - $$\(\theta\)$$ represents the parameters of the model (e.g., weights in a neural network, split points in a decision tree).  
-- $$\(y\)$$ is the true label (in our case, the true neutrino energy).  
+- $$\(y\)$$ is the true label (in our case, the true neutrino energy from MC simulation).  
 - $$\(\hat{y}\)$$ is the predicted label (the model’s estimate of the neutrino energy).  
 - $$\(\mathcal{L}\)$$ is a **loss function** that measures the discrepancy between the true label $$\(y\)$$ and the prediction $$\(\hat{y}\)$$.
 
-### **4.2 Key Equations in Regression Modeling**
+### **4.2 Regression Equations **
 
 1. **Linear Regression** (Fundamental Example)
 
@@ -179,30 +184,15 @@ The regression performance of each model is evaluated using:
   </tr>
   <tr>
     <td><strong>Pearson Correlation Coefficient</strong></td>
-    <td>Evaluates the linear relationship between truth and predicted energy values.</td>
+    <td> Evaluate the linear relationship between truth and predicted energy values.</td>
   </tr>
 </table>
 ---
 
-## **6. Key Scripts and Files**
-
-| File Name                  | Description                                                                    |
-|----------------------------|--------------------------------------------------------------------------------|
-| `data_processing.py`       | Loads, filters, and processes Monte Carlo simulation data.                     |
-| `feature_selection.py`     | Extracts relevant physical parameters for model training.                      |
-| `ml_models.py`             | Trains tree-based and distance-based regression models (RF, GB, kNN).          |
-| `deep_learning.py`         | Defines and trains ANN and CNN architectures.                                  |
-| `evaluation.py`            | Computes error metrics (MAE, MSE, R², Pearson) and generates visualizations.   |
-| `correlation_analysis.py`  | Computes feature correlation with reconstructed energy.                        |
-| `visualization.py`         | Generates histograms, scatter plots, and bar charts for model comparison.      |
-| **`learning_curve.py`**    | Demonstrates how to compute and plot learning curves using multiple regressors. |
-
----
-
-## **7. Methodology Summary**
+## **7. Methodology**
 
 1. **Data Preprocessing**  
-   - Load `df_truth` and `df_reco`, remove non-numeric columns, and standardize the features.
+   - Load `df_truth` and `df_reco`, remove non-numeric columns, and standardize the features for **CSV format**.
 
 2. **Model Training**  
    - Using selected features, train multiple models (`RandomForestRegressor`, `GradientBoostingRegressor`, `kNeighborsRegressor`, `ANN`, `CNN`).  
@@ -219,24 +209,27 @@ The regression performance of each model is evaluated using:
 
 ---
 
-## **8. Results & Insights**
+## **8. Results**
 
-1. **Tree-Based Models** (Random Forest, Gradient Boosting):  
-   - Provided robust performance with relatively small errors.  
-   - Typically less sensitive to outliers than simpler models.
+1. **Tree-Based Models** (Histogram Gradient Boosting):  
+   - The perfect model for the data with histograms and high-value distribution.  
 
-2. **k-Nearest Neighbors**:  
+2. **Tree-Based Models** (Random Forest, Gradient Boosting):  
+   - Provided solid performance with relatively small errors due to their scalability, and less risk of overfitting.  
+   - Also less sensitive to outliers than simpler models.
+
+3. **k-Nearest Neighbors**:  
    - Performs well with sufficient training samples, but can suffer from high-dimensional data sparsity.  
    - Computationally expensive during inference for large datasets.
 
-3. **Deep Learning Models** (ANN, CNN):  
+4. **Deep Learning Models** (ANN, CNN):  
    - Showed potential if expanded to more sophisticated architectures (e.g., deeper networks).  
    - Requires careful hyperparameter tuning (learning rate, batch size, etc.).
 
-4. **Feature Engineering**:  
+5. **Feature Engineering**:  
    - Standardization and physics-informed features substantially improved performance.
 
-Overall, **ensemble-based methods** (Random Forest, Gradient Boosting) emerged as strong contenders, but **deep learning approaches** could outperform them with more extensive tuning and data.
+Overall, **ensemble-based methods** (HistGradientBoosting) score very well, but **deep learning approaches** could outperform them with more extensive tuning and data.
 
 ---
 
@@ -322,8 +315,6 @@ Within our implementation, we compute several **regression metrics**:
 
 1. **Data Loading & Preprocessing**  
    - Open the HDF5 file and load the chosen **features** along with the **target** $$(\(E\))$$.  
-   - Apply a **log-transform** $$(\(\log_{10}(E)\))$$ to stabilize training if desired.  
-   - Use a **StandardScaler** so that all features have zero mean and unit variance.  
    - Split the data into **training** and **validation** sets (e.g., 80%/20%).
 
 2. **Training Subset Definition**  
@@ -379,8 +370,6 @@ For a **comprehensive deep dive** into our deep learning architectures, includin
 In that repository, you will find:
 - Detailed explanations of **ANN** and **CNN** model architectures.  
 - Advanced topics like **regularization**, **dropout**, and **batch normalization**.  
-- Examples of **hyperparameter tuning** and **best practices** for training deep neural networks.
-
 ---
 
 ## **11. Future Improvements**
@@ -395,7 +384,7 @@ In that repository, you will find:
    - Incorporate domain knowledge from neutrino physics to craft additional input variables or transformations.
 
 4. **Advanced Deep Learning Architectures**  
-   - Explore **Transformers**, **LSTM** (if sequential data is relevant), or other specialized architectures.
+   - Explore **Graph Neural Network**, **Transformers** , or other specialized architectures.
 
 5. **Uncertainty Quantification**  
    - Investigate methods like **Monte Carlo Dropout**, **Bayesian Neural Networks**, or **quantile regression** to estimate the uncertainty of energy predictions.
