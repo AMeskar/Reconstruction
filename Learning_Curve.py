@@ -24,7 +24,7 @@ warnings.filterwarnings("ignore")
 # -------- Define directories --------
 SAVE_DIR_DATA = "./"
 CAT = "model"
-DATA_FILE_PATH = "/Users/meskara/Desktop/Energy_Reconstruction/Data_for_ML.h5"
+DATA_FILE_PATH = "/Desktop/Energy_Reconstruction/Data_for_ML.h5"
 
 # -------- Define features --------
 FEATURES = ["channel_id", "dom_id", "t", "tdc", "pos_x", "pos_y", "pos_z", "dir_x", "dir_y", "dir_z", "tot", "a", "trig"]
