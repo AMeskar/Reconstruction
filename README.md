@@ -274,7 +274,7 @@ A learning curve tracks a performance metric $$\( M \)$$ (e.g., MSE, MAE, R²) a
 
 where:
 
-$$ \mathcal{M}_{\text{train}}(m) $$ is the metric computed on a training subset of size$$ \( m \)$$.  
+$$ \mathcal{M}_{\text{train}}(m) $$ is the metric computed on a training subset of size $$\( m \)$$.  
 $$ \mathcal{M}_{\text{valid}}(m) $$ is the metric computed on the validation set after training on the same $$\( m \)$$ samples.  
 Because we randomly sample subsets multiple times (say $$\( S \)$$ times) to reduce statistical fluctuations, we get repeated measurements:
 
@@ -298,7 +298,7 @@ And the standard deviation:
   $$ \sigma_{\text{valid}}(m) = \sqrt{\frac{1}{S} \sum_{s=1}^S \Bigl(\mathcal{M}_{\text{valid}, s}(m) - \overline{\mathcal{M}}_{\text{valid}}(m)\Bigr)^2} $$
 </p>
 
-We plot $$ \overline{\mathcal{M}}_{\text{train}}(m) $$ and $$ \overline{\mathcal{M}}_{\text{valid}}(m) $$ against $$\( m \)$$, often along with the $$\( \pm \sigma \)$$ “shaded region” to show variability.
+We plot $$\( \overline{\mathcal{M}}_{\text{train}}(m) \)$$ and $$(\ \overline{\mathcal{M}}_{\text{valid}}(m) \)$$ against $$\( m \)$$, often along with the $$ \pm \sigma $$ “shaded region” to show variability.
 
 ---
 
