@@ -279,26 +279,26 @@ where:
 Because we randomly sample subsets multiple times (say \( S \) times) to reduce statistical fluctuations, we get repeated measurements:
 
 <p align="center">
-  \( \mathcal{M}_{\text{train}, s}(m), \quad \mathcal{M}_{\text{valid}, s}(m) \quad \text{for} \; s = 1, 2, \ldots, S \)
+  $$ \mathcal{M}_{\text{train}, s}(m), \quad \mathcal{M}_{\text{valid}, s}(m) \quad \text{for} \; s = 1, 2, \ldots, S $$
 </p>
 
 We then compute the average metric:
 
 <p align="center">
-  \( \overline{\mathcal{M}}_{\text{train}}(m) = \frac{1}{S} \sum_{s=1}^S \mathcal{M}_{\text{train}, s}(m), \quad \overline{\mathcal{M}}_{\text{valid}}(m) = \frac{1}{S} \sum_{s=1}^S \mathcal{M}_{\text{valid}, s}(m) \)
+  $$ \overline{\mathcal{M}}_{\text{train}}(m) = \frac{1}{S} \sum_{s=1}^S \mathcal{M}_{\text{train}, s}(m), \quad \overline{\mathcal{M}}_{\text{valid}}(m) = \frac{1}{S} \sum_{s=1}^S \mathcal{M}_{\text{valid}, s}(m) $$
 </p>
 
 And the standard deviation:
 
 <p align="center">
-  \( \sigma_{\text{train}}(m) = \sqrt{\frac{1}{S} \sum_{s=1}^S \Bigl(\mathcal{M}_{\text{train}, s}(m) - \overline{\mathcal{M}}_{\text{train}}(m)\Bigr)^2} \)
+  $$ \sigma_{\text{train}}(m) = \sqrt{\frac{1}{S} \sum_{s=1}^S \Bigl(\mathcal{M}_{\text{train}, s}(m) - \overline{\mathcal{M}}_{\text{train}}(m)\Bigr)^2} $$
 </p>
 
 <p align="center">
-  $$\( \sigma_{\text{valid}}(m) = \sqrt{\frac{1}{S} \sum_{s=1}^S \Bigl(\mathcal{M}_{\text{valid}, s}(m) - \overline{\mathcal{M}}_{\text{valid}}(m)\Bigr)^2} \)$$
+  $$ \sigma_{\text{valid}}(m) = \sqrt{\frac{1}{S} \sum_{s=1}^S \Bigl(\mathcal{M}_{\text{valid}, s}(m) - \overline{\mathcal{M}}_{\text{valid}}(m)\Bigr)^2} $$
 </p>
 
-We plot \( \overline{\mathcal{M}}_{\text{train}}(m) \) and \( \overline{\mathcal{M}}_{\text{valid}}(m) \) against \( m \), often along with the \( \pm \sigma \) “shaded region” to show variability.
+We plot $$ \overline{\mathcal{M}}_{\text{train}}(m) $$ and $$ \overline{\mathcal{M}}_{\text{valid}}(m) $$ against \( m \), often along with the \( \pm \sigma \) “shaded region” to show variability.
 
 ---
 
