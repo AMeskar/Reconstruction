@@ -272,8 +272,7 @@ And the **standard deviation**:
 $$\[
 \sigma_{\text{train}}(m)
 = \sqrt{\frac{1}{S} \sum_{s=1}^S \Bigl(\mathcal{M}_{\text{train}, s}(m) - \overline{\mathcal{M}}_{\text{train}}(m)\Bigr)^2},
-\]$$
-$$\[
+\]\[
 \sigma_{\text{valid}}(m)
 = \sqrt{\frac{1}{S} \sum_{s=1}^S \Bigl(\mathcal{M}_{\text{valid}, s}(m) - \overline{\mathcal{M}}_{\text{valid}}(m)\Bigr)^2}.
 \]$$
