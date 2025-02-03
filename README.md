@@ -289,7 +289,7 @@ And the standard deviation:
 <p align="center"> $$ \sigma_{\text{valid}}(m) = \sqrt{\frac{1}{S} \sum_{s=1}^S \Bigl(\mathcal{M}_{\text{valid}, s}(m) - \overline{\mathcal{M}}_{\text{valid}}(m)\Bigr)^2} $$ </p>
 
 We plot 
-<p align="center"> $$ \overline{\mathcal{M}}_{\text{train}}(m) $$ </p> and  <p align="center"> $ \overline{\mathcal{M}}_{\text{valid}}(m) $ </p> against ( m ), often along with the  <p align="center"> $ \pm \sigma $ </p>“shaded region” to show variability. 
+<p align="center"> $$ \overline{\mathcal{M}}_{\text{train}}(m) $$ </p> and  <p align="center"> $$ \overline{\mathcal{M}}_{\text{valid}}(m) $$ </p> against ( m ), often along with the  <p align="center"> $$ \pm \sigma $$ </p>“shaded region” to show variability. 
 ---
 
 ### **3. Metrics Used**
