@@ -96,7 +96,7 @@ where:
 - $$\(\theta\)$$ represents the parameters of the model (e.g., weights in a neural network, split points in a decision tree).  
 - $$\(y\)$$ is the true label (in our case, the true neutrino energy).  
 - $$\(\hat{y}\)$$ is the predicted label (the model’s estimate of the neutrino energy).  
-- $$\(\mathcal{L}\)$$ is a **loss function** that measures the discrepancy between the true label \(y\) and the prediction \(\hat{y}\).
+- $$\(\mathcal{L}\)$$ is a **loss function** that measures the discrepancy between the true label $$\(y\)$$ and the prediction $$\(\hat{y}\)$$.
 
 ### **4.2 Key Equations in Regression Modeling**
 
@@ -122,7 +122,19 @@ $$
 $$
 </p>
 </div>
-   where $$\(\bar{y}_\text{Left}\)$$ and $$\(\bar{y}_\text{Right}\)$$ are the mean values of the left and right child nodes, respectively.
+   where <div style="background-color:black; padding:10px;">
+<p style="color:white;">
+$$
+\bar{y}_\text{Left}
+$$
+</p>
+</div>$ and <div style="background-color:black; padding:10px;">
+<p style="color:white;">
+$$
+\bar{y}_\text{Right}
+$$
+</p>
+</div> are the mean values of the left and right child nodes, respectively.
 
 3. **Ensemble Methods** (e.g., Gradient Boosting)  
    **Gradient Boosting** fits new weak learners to the **residual errors**:
@@ -156,7 +168,13 @@ The regression performance of each model is evaluated using:
 
 | Metric                               | Description                                                                         |
 |--------------------------------------|-------------------------------------------------------------------------------------|
-| **Mean Absolute Error (MAE)**        | $$\(\text{MAE} = \frac{1}{N}\sum_{j=1}^N \bigl|y_j - \hat{y}_j\bigr|\)$$            |
+| **Mean Absolute Error (MAE)**        | <div style="background-color:black; padding:10px;">
+<p style="color:white;">
+$$
+\text{MAE} = \frac{1}{N}\sum_{j=1}^N \bigl|y_j - \hat{y}_j\bigr|
+$$
+</p>
+</div>            |
 | **Mean Squared Error (MSE)**         | $$\(\text{MSE} = \frac{1}{N}\sum_{j=1}^N (y_j - \hat{y}_j)^2\)$$                    |
 | **R² Score** (Coefficient of Determination) | Measures how well future samples are likely to be predicted by the model; the ideal score is 1.0. |
 | **Pearson Correlation Coefficient**  | Evaluates the linear relationship between truth and predicted energy values.        |
