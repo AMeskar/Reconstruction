@@ -272,9 +272,9 @@ A learning curve tracks a performance metric \( M \) (e.g., MSE, MAE, R²) as a 
 
 where:
 
-<p align="center"> $$ \mathcal{M}_{\text{train}}(m) $$  is the metric computed on a training subset of size $\( m \)$. </p>  
-<p align="center"> $$ \mathcal{M}_{\text{valid}}(m) $$  is the metric computed on the validation set after training on the same $\( m \)$ samples.</p>
-Because we randomly sample subsets multiple times (say $$\( S \)$$ times) to reduce statistical fluctuations, we get repeated measurements:
+<p align="center"> $$ \(\mathcal{M}_{\text{train}}(m)\) $$  is the metric computed on a training subset of size \( m \). </p>  
+<p align="center"> $$ \(\mathcal{M}_{\text{valid}}(m)\) $$  is the metric computed on the validation set after training on the same \( m \) samples.</p>
+Because we randomly sample subsets multiple times (say $\( S \)$ times) to reduce statistical fluctuations, we get repeated measurements:
 
 <p align="center"> $$ \mathcal{M}_{\text{train}, s}(m), \quad \mathcal{M}_{\text{valid}, s}(m) \quad \text{for} \; s = 1, 2, \ldots, S $$ </p>
 
