@@ -268,7 +268,9 @@ This end-to-end procedure requires **zero manual intervention** once launched. I
 
 A learning curve tracks a performance metric \( M \) (e.g., MSE, MAE, R²) as a function of the training set size \( m \). Formally, we denote:
 
-$$ \mathcal{M}_{\text{train}}(m), \quad \mathcal{M}_{\text{valid}}(m) $$
+$$
+\mathcal{M}_{\text{train}}(m), \quad \mathcal{M}_{\text{valid}}(m)
+$$
 
 where:
 
@@ -276,11 +278,15 @@ where:
 \( \mathcal{M}_{\text{valid}}(m) \) is the metric computed on the validation set after training on the same \( m \) samples.  
 Because we randomly sample subsets multiple times (say \( S \) times) to reduce statistical fluctuations, we get repeated measurements:
 
-$$ \mathcal{M}_{\text{train}, s}(m), \quad \mathcal{M}_{\text{valid}, s}(m) \quad \text{for} \; s = 1, 2, \ldots, S $$
+$$
+\mathcal{M}_{\text{train}, s}(m), \quad \mathcal{M}_{\text{valid}, s}(m) \quad \text{for} \; s = 1, 2, \ldots, S
+$$
 
 We then compute the average metric:
 
-$$ \overline{\mathcal{M}}_{\text{train}}(m) = \frac{1}{S} \sum_{s=1}^S \mathcal{M}_{\text{train}, s}(m), \quad \overline{\mathcal{M}}_{\text{valid}}(m) = \frac{1}{S} \sum_{s=1}^S \mathcal{M}_{\text{valid}, s}(m) $$
+$$
+\overline{\mathcal{M}}_{\text{train}}(m) = \frac{1}{S} \sum_{s=1}^S \mathcal{M}_{\text{train}, s}(m), \quad \overline{\mathcal{M}}_{\text{valid}}(m) = \frac{1}{S} \sum_{s=1}^S \mathcal{M}_{\text{valid}, s}(m)
+$$
 
 And the standard deviation:
 
