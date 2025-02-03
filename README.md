@@ -115,9 +115,13 @@ where:
 
 2. **Decision Trees**  
    Splits features recursively to reduce a **criterion**, typically MSE (for regression):
-   $$\[
-   \text{Split Criterion} = \sum_{j \in \text{Left}} (y_j - \bar{y}_\text{Left})^2 \;+\; \sum_{j \in \text{Right}} (y_j - \bar{y}_\text{Right})^2
-   \]$$
+   <div style="background-color:black; padding:10px;">
+<p style="color:white;">
+$$
+\text{Split Criterion} = \sum_{j \in \text{Left}} (y_j - \bar{y}\text{Left})^2 + \sum_{j \in \text{Right}} (y_j - \bar{y}\text{Right})^2
+$$
+</p>
+</div>
    where $$\(\bar{y}_\text{Left}\)$$ and $$\(\bar{y}_\text{Right}\)$$ are the mean values of the left and right child nodes, respectively.
 
 3. **Ensemble Methods** (e.g., Gradient Boosting)  
