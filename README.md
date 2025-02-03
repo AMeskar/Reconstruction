@@ -160,13 +160,28 @@ where $\bar{y}_\text{Left}$ and $\bar{y}_\text{right}$ are the mean values of th
 
 The regression performance of each model is evaluated using:
 
-| Metric                               | Description                                                                         |
-|--------------------------------------|-------------------------------------------------------------------------------------|
-| **Mean Absolute Error (MAE)**        | $$\(\text{MAE} = \frac{1}{N}\sum_{j=1}^N \bigl|y_j - \hat{y}_j\bigr|\)$$                |
-| **Mean Squared Error (MSE)**         | $$\(\text{MSE} = \frac{1}{N}\sum_{j=1}^N (y_j - \hat{y}_j)^2\)$$                    |
-| **R² Score** (Coefficient of Determination) | Measures how well future samples are likely to be predicted by the model; the ideal score is 1.0. |
-| **Pearson Correlation Coefficient**  | Evaluates the linear relationship between truth and predicted energy values.        |
-
+<table>
+  <tr>
+    <th>Metric</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Mean Absolute Error (MAE)</strong></td>
+    <td><div style="background-color:black; padding:10px; color:white;">$\text{MAE} = \frac{1}{N}\sum_{j=1}^N \bigl|y_j - \hat{y}_j\bigr|$</div></td>
+  </tr>
+  <tr>
+    <td><strong>Mean Squared Error (MSE)</strong></td>
+    <td><div style="background-color:black; padding:10px; color:white;">$\text{MSE} = \frac{1}{N}\sum_{j=1}^N (y_j - \hat{y}_j)^2$</div></td>
+  </tr>
+  <tr>
+    <td><strong>R² Score</strong> (Coefficient of Determination)</td>
+    <td>Measures how well future samples are likely to be predicted by the model; the ideal score is 1.0.</td>
+  </tr>
+  <tr>
+    <td><strong>Pearson Correlation Coefficient</strong></td>
+    <td>Evaluates the linear relationship between truth and predicted energy values.</td>
+  </tr>
+</table>
 ---
 
 ## **6. Key Scripts and Files**
