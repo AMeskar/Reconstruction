@@ -241,7 +241,7 @@ This end-to-end procedure requires **zero manual intervention** once launched. I
 
 #### 2.1 General Learning Curve Concept
 
-A learning curve tracks a **performance metric** \(\mathcal{M}\) (e.g., MSE, MAE, R²) as a function of the training set size \(m\). Formally, we denote:
+A learning curve tracks a **performance metric** $$\(\mathcal{M}\)$$ (e.g., MSE, MAE, R²) as a function of the training set size $$\(m\)$$. Formally, we denote:
 
 $$\[
 \mathcal{M}_{\text{train}}(m), \quad \mathcal{M}_{\text{valid}}(m),
