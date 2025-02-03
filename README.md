@@ -124,7 +124,7 @@ $$
 </p>
 </div>
 
-   where $\(\bar{y}_\text{Left}\)$ and $\(\bar{y}_\text{Right}\)$ are the mean values of the left and right child nodes, respectively.
+   where $\[ \bar{y}_\text{Left}\]$ and $\[\bar{y}_\text{Right}\]$ are the mean values of the left and right child nodes, respectively.
 
 4. **Ensemble Methods** (e.g., Gradient Boosting)  
    **Gradient Boosting** fits new weak learners to the **residual errors**:
