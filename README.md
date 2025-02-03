@@ -364,7 +364,7 @@ By fully automating the learning curve generation process, we provide a robust a
 
 ## **10. Deep Learning Section**
 
-For a **comprehensive deep dive** into our deep learning architectures, including **layer-by-layer explanations** and **additional experiments**, please refer to [this dedicated repository]([https://github.com/AMeskar/DeepLearning](https://github.com/AMeskar/DeepLearning)).  
+For a **comprehensive deep dive** into our deep learning architectures, including **layer-by-layer explanations** and **additional experiments**, please refer to [https://github.com/AMeskar/DeepLearning](https://github.com/AMeskar/DeepLearning).  
 
 In that repository, you will find:
 - Detailed explanations of **ANN** and **CNN** model architectures.  
