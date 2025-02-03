@@ -162,7 +162,7 @@ The regression performance of each model is evaluated using:
 
 | Metric                               | Description                                                                         |
 |--------------------------------------|-------------------------------------------------------------------------------------|
-| **Mean Absolute Error (MAE)**        | $$\text{MAE} = \frac{1}{N}\sum_{j=1}^N \bigl|y_j - \hat{y}_j\bigr|$$                |
+| **Mean Absolute Error (MAE)**        | $$\(\text{MAE} = \frac{1}{N}\sum_{j=1}^N \bigl|y_j - \hat{y}_j\bigr|\)$$                |
 | **Mean Squared Error (MSE)**         | $$\(\text{MSE} = \frac{1}{N}\sum_{j=1}^N (y_j - \hat{y}_j)^2\)$$                    |
 | **R² Score** (Coefficient of Determination) | Measures how well future samples are likely to be predicted by the model; the ideal score is 1.0. |
 | **Pearson Correlation Coefficient**  | Evaluates the linear relationship between truth and predicted energy values.        |
